@@ -6,6 +6,9 @@ class OctableWidget(QWidget):
 
   def __init__(self):
     super().__init__()
+    self.setLayoutMainMenu()
+
+  def setLayoutMainMenu(self):
     layout = QBoxLayout(QBoxLayout.Direction.TopToBottom)
     self.welcome = QLabel('Welcome to the Octable client')
     layout.addWidget(self.welcome, alignment=Qt.AlignCenter)
