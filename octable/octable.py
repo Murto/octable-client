@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QBoxLayout, QLabel, QPushButton, QWidget
+from PyQt5.QtWidgets import QApplication, QBoxLayout, QLabel, QListWidget, QPushButton, QWidget
 from PyQt5.QtCore import Qt
 
 class OctableWidget(QWidget):
@@ -19,6 +19,19 @@ class OctableWidget(QWidget):
     settingsButton = QPushButton('Settings')
     layout.addWidget(settingsButton, alignment=Qt.AlignCenter)
     self.setLayout(layout)
+
+  def setLayoutSelectGame(self):
+    layout = QBoxLayout(QBoxLayout.Direction.TopToBottom)
+    backButton = QPushButton('back')
+    layout.addWidget(backButton, alignment=Qt.AlignRight)
+    installGamesButton = QPushButton('Install Games')
+    layout.addWidget(installGamesButton, alignment=Qt.AlignCenter)
+    gameList = QListWidget()
+    layout.addWidget(gameList, alignment=Qt.AlignCenter)
+    selectGameButton = QPushButton('Select Game')
+    layout.addWidget(selectGameButton, alignment=Qt.AlignCenter)
+    self.setLayout(layout)
+
 
 if __name__ == '__main__':
   app = QApplication(sys.argv)
