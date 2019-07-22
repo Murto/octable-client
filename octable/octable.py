@@ -1,7 +1,9 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QBoxLayout, QLabel, QListWidget, QPushButton, QStackedWidget, QWidget
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QStackedWidget
 from mainmenu import MainMenu
+import sys
+
+def test():
+  print("Hello, world!")
 
 class OctableWidget(QStackedWidget):
 

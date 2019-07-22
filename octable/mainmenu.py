@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QBoxLayout, QLabel, QListWidget, QPushButton, QWidget
+from PyQt5.QtWidgets import QBoxLayout, QLabel, QPushButton, QWidget
 from PyQt5.QtCore import Qt
 
 class MainMenu(QWidget):
