@@ -14,46 +14,46 @@ class OctableWidget(QStackedWidget):
 
   def __init__(self):
     super().__init__()
-    self.mainmenu = MainMenu()
-    self.selectgame = SelectGame()
+    self.mainMenu = MainMenu()
+    self.selectGame = SelectGame()
     self.settings = Settings()
-    self.installgames = InstallGames()
-    self.managecharacters = ManageCharacters()
-    self.viewcharacter = ViewCharacter()
-    self.addWidget(self.mainmenu)
-    self.addWidget(self.selectgame)
+    self.installGames = InstallGames()
+    self.manageCharacters = ManageCharacters()
+    self.viewCharacter = ViewCharacter()
+    self.addWidget(self.mainMenu)
+    self.addWidget(self.selectGame)
     self.addWidget(self.settings)
-    self.addWidget(self.installgames)
-    self.addWidget(self.managecharacters)
-    self.addWidget(self.viewcharacter)
-    self.mainmenu.setCreateCharacterCallback(self.showSelectGame)
-    self.mainmenu.setManageCharactersCallback(self.showManageCharacters)
-    self.mainmenu.setSettingsCallback(self.showSettings)
-    self.selectgame.setBackCallback(self.showMainMenu)
-    self.selectgame.setInstallGamesCallback(self.showInstallGames)
+    self.addWidget(self.installGames)
+    self.addWidget(self.manageCharacters)
+    self.addWidget(self.viewCharacter)
+    self.mainMenu.setCreateCharacterCallback(self.showSelectGame)
+    self.mainMenu.setManageCharactersCallback(self.showManageCharacters)
+    self.mainMenu.setSettingsCallback(self.showSettings)
+    self.selectGame.setBackCallback(self.showMainMenu)
+    self.selectGame.setInstallGamesCallback(self.showInstallGames)
     self.settings.setBackCallback(self.showMainMenu)
-    self.installgames.setBackCallback(self.showSelectGame)
-    self.managecharacters.setBackCallback(self.showMainMenu)
-    self.managecharacters.setViewCallback(self.showViewCharacter)
-    self.viewcharacter.setBackCallback(self.showManageCharacters)
+    self.installGames.setBackCallback(self.showSelectGame)
+    self.manageCharacters.setBackCallback(self.showMainMenu)
+    self.manageCharacters.setViewCallback(self.showViewCharacter)
+    self.viewCharacter.setBackCallback(self.showManageCharacters)
   
   def showMainMenu(self):
-    self.setCurrentWidget(self.mainmenu)
+    self.setCurrentWidget(self.mainMenu)
 
   def showSelectGame(self):
-    self.setCurrentWidget(self.selectgame)
+    self.setCurrentWidget(self.selectGame)
 
   def showManageCharacters(self):
-    self.setCurrentWidget(self.managecharacters)
+    self.setCurrentWidget(self.manageCharacters)
 
   def showSettings(self):
     self.setCurrentWidget(self.settings)
 
   def showInstallGames(self):
-    self.setCurrentWidget(self.installgames)
+    self.setCurrentWidget(self.installGames)
 
   def showViewCharacter(self):
-    self.setCurrentWidget(self.viewcharacter)
+    self.setCurrentWidget(self.viewCharacter)
 
 if __name__ == '__main__':
   app = QApplication(sys.argv)
