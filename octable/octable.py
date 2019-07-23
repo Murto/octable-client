@@ -4,6 +4,7 @@ from selectgame import SelectGame
 from settings import Settings
 from installgames import InstallGames
 from managecharacters import ManageCharacters
+from viewcharacter import ViewCharacter
 import sys
 
 def test():
@@ -18,11 +19,13 @@ class OctableWidget(QStackedWidget):
     self.settings = Settings()
     self.installgames = InstallGames()
     self.managecharacters = ManageCharacters()
+    self.viewcharacter = ViewCharacter()
     self.addWidget(self.mainmenu)
     self.addWidget(self.selectgame)
     self.addWidget(self.settings)
     self.addWidget(self.installgames)
     self.addWidget(self.managecharacters)
+    self.addWidget(self.viewcharacter)
     self.mainmenu.setCreateCharacterCallback(self.showSelectGame)
     self.mainmenu.setManageCharactersCallback(self.showManageCharacters)
     self.mainmenu.setSettingsCallback(self.showSettings)
@@ -31,6 +34,8 @@ class OctableWidget(QStackedWidget):
     self.settings.setBackCallback(self.showMainMenu)
     self.installgames.setBackCallback(self.showSelectGame)
     self.managecharacters.setBackCallback(self.showMainMenu)
+    self.managecharacters.setViewCallback(self.showViewCharacter)
+    self.viewcharacter.setBackCallback(self.showManageCharacters)
   
   def showMainMenu(self):
     self.setCurrentWidget(self.mainmenu)
@@ -46,6 +51,9 @@ class OctableWidget(QStackedWidget):
 
   def showInstallGames(self):
     self.setCurrentWidget(self.installgames)
+
+  def showViewCharacter(self):
+    self.setCurrentWidget(self.viewcharacter)
 
 if __name__ == '__main__':
   app = QApplication(sys.argv)
