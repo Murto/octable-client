@@ -1,5 +1,7 @@
 class NumberAttribute:
 
+  TYPE = 'NUMBER'
+
   def __init__(self, number):
     assert(isinstance(number, int) or isinstance(number, float))
     self._value = number
